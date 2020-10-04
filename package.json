@@ -1,6 +1,6 @@
 {
   "name": "file-exists-safe",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Check if a file exists without try catch",
   "license": "MIT",
   "author": {
