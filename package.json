@@ -1,7 +1,7 @@
 {
   "name": "file-exists-safe",
   "version": "1.0.0",
-  "description": "Check if a file exists without a try catch",
+  "description": "Check if a file exists without try catch",
   "license": "MIT",
   "author": {
     "name": "Connor White",

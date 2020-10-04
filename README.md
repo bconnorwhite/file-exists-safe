@@ -1,5 +1,7 @@
 <div align="center">
-  <h1>file-exists-safe</h1>
+  <a href="https://github.com/bconnorwhite/file-exists-safe">
+    <img alt="file-exists-safe" src="assets/header.svg" />
+  </a>
   <a href="https://npmjs.com/package/file-exists-safe">
     <img alt="NPM" src="https://img.shields.io/npm/v/file-exists-safe.svg">
   </a>
@@ -19,11 +21,11 @@
 
 <br />
 
-> Check if a file exists without a try catch.
+> Check if a file exists without try catch.
 
 - Returns `true` if the path exists and is a file.
 - Returns `false` if the path is not a file, or does not exist.
-- Returns `undefined` for other errors (for example, permission denied) rather than throwing.
+- Returns `undefined` on other errors (for example, permission denied) rather than throwing.
 
 ## Installation
 
