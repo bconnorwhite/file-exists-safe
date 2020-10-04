@@ -62,6 +62,9 @@ function fileExistsSync(path: string): boolean | undefined;
 
 [MIT](https://opensource.org/licenses/MIT)
 
+<br />
+
 ## Related Packages
 
+- [fs-safe](https://www.npmjs.com/package/fs-safe): A simple fs wrapper that doesn't throw
 - [dir-exists-safe](https://www.npmjs.com/package/dir-exists-safe): Check if a directory exists without a try catch
