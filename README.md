@@ -40,11 +40,18 @@ npm install file-exists-safe
 ## API
 
 ```ts
-import { fileExists, fileExistsSync } from "file-exists-safe";
+import { fileExists, fileExistsSync, Options } from "file-exists-safe";
 
-function fileExists(path: string): Promise<boolean | undefined>;
+function fileExists(path: string, options?: Options): Promise<boolean | undefined>;
 
-function fileExistsSync(path: string): boolean | undefined;
+function fileExistsSync(path: string, options?: Options): boolean | undefined;
+
+type Options = {
+  /**
+   * Return true if path is directory. Default: `false`
+   */
+  includeDirectories?: boolean;
+}
 ```
 
 <br />

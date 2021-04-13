@@ -1,4 +1,11 @@
-import { promises, statSync } from "fs";
+import { promises, statSync, Stats } from "fs";
+
+export type Options = {
+  /**
+   * Return true if path is directory. Default: `false`
+   */
+  includeDirectories?: boolean;
+}
 
 function handleError(e: any) {
   if(e.code === "ENOENT") {
@@ -8,17 +15,22 @@ function handleError(e: any) {
   }
 }
 
-export async function fileExists(path: string) {
+function handleResult(result: Stats, options?: Options) {
+  return result.isFile() || Boolean(options?.includeDirectories && result.isDirectory());
+}
+
+export async function fileExists(path: string, options?: Options) {
   return promises.stat(path).then((result) => {
-    return result.isFile();
+    return handleResult(result, options);
   }).catch((e) => {
     return handleError(e);
   });
 }
 
-export function fileExistsSync(path: string) {
+export function fileExistsSync(path: string, options?: Options) {
   try {
-    return statSync(path).isFile();
+    const result = statSync(path);
+    return handleResult(result, options);
   } catch(e) {
     return handleError(e);
   }
