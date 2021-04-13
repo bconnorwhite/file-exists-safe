@@ -14,7 +14,7 @@ beforeEach(async () => {
         "error.md": "error"
       }
     })
-  })
+  });
 });
 
 afterEach(async () => {

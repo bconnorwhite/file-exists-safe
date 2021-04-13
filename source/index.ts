@@ -5,9 +5,13 @@ export type Options = {
    * Return true if path is directory. Default: `false`
    */
   includeDirectories?: boolean;
-}
+};
 
-function handleError(e: any) {
+type Error = {
+  code: string;
+};
+
+function handleError(e: Error) {
   if(e.code === "ENOENT") {
     return false;
   } else {
@@ -19,7 +23,7 @@ function handleResult(result: Stats, options?: Options) {
   return result.isFile() || Boolean(options?.includeDirectories && result.isDirectory());
 }
 
-export async function fileExists(path: string, options?: Options) {
+export async function fileExists(path: string, options?: Options): Promise<boolean | undefined> {
   return promises.stat(path).then((result) => {
     return handleResult(result, options);
   }).catch((e) => {
@@ -27,7 +31,7 @@ export async function fileExists(path: string, options?: Options) {
   });
 }
 
-export function fileExistsSync(path: string, options?: Options) {
+export function fileExistsSync(path: string, options?: Options): boolean | undefined {
   try {
     const result = statSync(path);
     return handleResult(result, options);
