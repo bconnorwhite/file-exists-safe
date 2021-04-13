@@ -6,7 +6,7 @@ beforeEach(async () => {
   mock({
     "/test": {
       "note.md": "hello world!",
-      "dir": directory({})
+      "dir": {}
     },
     "/no-access": directory({
       mode: 0,
