@@ -1,3 +1,7 @@
+# [2.0.0](https://github.com/bconnorwhite/file-exists-safe/compare/v1.1.0...v2.0.0) (2023-01-12)
+
+
+
 # [1.1.0](https://github.com/bconnorwhite/file-exists-safe/compare/v1.0.2...v1.1.0) (2021-04-13)
 
 
