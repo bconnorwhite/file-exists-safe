@@ -1,4 +1,4 @@
-import { promises, statSync, Stats } from "fs";
+import { promises, statSync, Stats } from "node:fs";
 
 export type Options = {
   /**
@@ -36,6 +36,6 @@ export function fileExistsSync(path: string, options?: Options): boolean | undef
     const result = statSync(path);
     return handleResult(result, options);
   } catch(e) {
-    return handleError(e);
+    return handleError(e as Error);
   }
 }

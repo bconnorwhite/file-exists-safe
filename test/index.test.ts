@@ -1,6 +1,6 @@
-import { test, expect } from "@jest/globals";
+import { test, expect, beforeEach, afterEach } from "@jest/globals";
 import mock, { restore, directory } from "mock-fs";
-import { fileExists } from "../source";
+import { fileExists } from "../source/index.js";
 
 beforeEach(async () => {
   mock({
