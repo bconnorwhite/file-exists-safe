@@ -1,4 +1,4 @@
-import { promises, statSync, Stats } from "node:fs";
+import { promises, statSync, type Stats } from "node:fs";
 
 export type Options = {
   /**
@@ -7,16 +7,12 @@ export type Options = {
   includeDirectories?: boolean;
 };
 
-type Error = {
-  code: string;
+type FsError = {
+  code?: string;
 };
 
-function handleError(e: Error) {
-  if(e.code === "ENOENT") {
-    return false;
-  } else {
-    return undefined;
-  }
+function handleError(error: FsError) {
+  return error.code === "ENOENT" ? false : undefined;
 }
 
 function handleResult(result: Stats, options?: Options) {
@@ -26,16 +22,15 @@ function handleResult(result: Stats, options?: Options) {
 export async function fileExists(path: string, options?: Options): Promise<boolean | undefined> {
   return promises.stat(path).then((result) => {
     return handleResult(result, options);
-  }).catch((e) => {
-    return handleError(e);
+  }).catch((error: unknown) => {
+    return handleError(error as FsError);
   });
 }
 
 export function fileExistsSync(path: string, options?: Options): boolean | undefined {
   try {
-    const result = statSync(path);
-    return handleResult(result, options);
-  } catch(e) {
-    return handleError(e as Error);
+    return handleResult(statSync(path), options);
+  } catch(error) {
+    return handleError(error as FsError);
   }
 }

@@ -2,13 +2,13 @@
 <div id="top" align="center">
   <h1>file-exists-safe</h1>
   <a href="https://npmjs.com/package/file-exists-safe">
-    <img alt="NPM" src="https://img.shields.io/npm/v/file-exists-safe.svg">
+    <img alt="npm" src="https://img.shields.io/npm/v/file-exists-safe.svg">
   </a>
   <a href="https://github.com/bconnorwhite/file-exists-safe">
-    <img alt="TypeScript" src="https://img.shields.io/github/languages/top/bconnorwhite/file-exists-safe.svg">
+    <img alt="typescript" src="https://img.shields.io/github/languages/top/bconnorwhite/file-exists-safe.svg">
   </a>
-  <a href="https://coveralls.io/github/bconnorwhite/file-exists-safe?branch=master">
-    <img alt="Coverage Status" src="https://img.shields.io/coveralls/github/bconnorwhite/file-exists-safe.svg?branch=master">
+  <a href="https://coveralls.io/github/bconnorwhite/file-exists-safe?branch=main">
+    <img alt="Coverage Status" src="https://img.shields.io/coveralls/github/bconnorwhite/file-exists-safe.svg?branch=main">
   </a>
 </div>
 
@@ -16,39 +16,64 @@
 
 <blockquote align="center">Check if a file exists without try catch.</blockquote>
 
-<br />
-
-_If I should maintain this repo, please ⭐️_
-<a href="https://github.com/bconnorwhite/file-exists-safe">
-  <img align="right" alt="GitHub stars" src="https://img.shields.io/github/stars/bconnorwhite/file-exists-safe?label=%E2%AD%90%EF%B8%8F&style=social">
-</a>
-
-_DM me on [Twitter](https://twitter.com/bconnorwhite) if you have questions or suggestions._
-<a href="https://twitter.com/bconnorwhite">
-  <img align="right" alt="Twitter" src="https://img.shields.io/twitter/url?label=%40bconnorwhite&style=social&url=https%3A%2F%2Ftwitter.com%2Fbconnorwhite">
-</a>
-
 ---
 <!--END HEADER-->
 
-> Check if a file exists without try catch.
 - Returns `true` if the path exists and is a file.
 - Returns `false` if the path is not a file, or does not exist.
-- Returns `undefined` on other errors (for example, permission denied) rather than throwing.
+- Returns `undefined` on other errors, such as permission denied, rather than throwing.
 
+<!-- BEGIN INSTALLATION -->
 ## Installation
 
-```sh
-yarn add file-exists-safe
-```
+<details open>
+  <summary>
+    <a href="https://www.npmjs.com/package/file-exists-safe">
+      <img src="https://img.shields.io/badge/npm-CB3837?logo=npm&logoColor=white" alt="NPM" />
+    </a>
+  </summary>
 
 ```sh
 npm install file-exists-safe
 ```
 
+</details>
+
+<details>
+  <summary>
+    <a href="https://yarnpkg.com/package/file-exists-safe">
+      <img src="https://img.shields.io/badge/yarn-2C8EBB?logo=yarn&logoColor=white" alt="Yarn" />
+    </a>
+  </summary>
+
+```sh
+yarn add file-exists-safe
+```
+
+</details>
+
+<details>
+  <summary>
+    <img src="https://img.shields.io/badge/pnpm-F69220?logo=pnpm&logoColor=white" alt="PNPM" />
+  </summary>
+
 ```sh
 pnpm add file-exists-safe
 ```
+
+</details>
+
+<details>
+  <summary>
+    <img src="https://img.shields.io/badge/bun-EE81C3?logo=bun&logoColor=white" alt="Bun" />
+  </summary>
+
+```sh
+bun add file-exists-safe
+```
+
+</details>
+<!-- END INSTALLATION -->
 
 ## Usage
 
@@ -66,26 +91,12 @@ type Options = {
   includeDirectories?: boolean;
 };
 ```
+
 <!--BEGIN FOOTER-->
-
-<br />
-
-<h2>Dev Dependencies</h2>
-
-- [@types/mock-fs](https://www.npmjs.com/package/@types/mock-fs): TypeScript definitions for mock-fs
-- [@types/node](https://www.npmjs.com/package/@types/node): TypeScript definitions for Node.js
-- [autorepo](https://www.npmjs.com/package/autorepo): Autorepo abstracts away your dev dependencies, providing a single command to run all of your scripts.
-- [mock-fs](https://www.npmjs.com/package/mock-fs): A configurable mock file system.  You know, for testing.
-
-
-<br />
-
 <h2 id="license">License <a href="https://opensource.org/licenses/MIT"><img align="right" alt="license" src="https://img.shields.io/npm/l/file-exists-safe.svg"></a></h2>
 
-[MIT](https://opensource.org/licenses/MIT)
+[MIT](https://opensource.org/licenses/MIT) - _MIT License_
 <!--END FOOTER-->
-
-<br />
 
 ## Related Packages
 

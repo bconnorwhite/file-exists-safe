@@ -1,8 +1,10 @@
-import { test, expect, beforeEach, afterEach } from "@jest/globals";
+/* eslint-disable import/no-relative-parent-imports, @typescript-eslint/no-floating-promises */
+import assert from "node:assert/strict";
+import { afterEach, beforeEach, test } from "node:test";
 import mock, { restore, directory } from "mock-fs";
-import { fileExists } from "../source/index.js";
+import { fileExists } from "../src/index.ts";
 
-beforeEach(async () => {
+beforeEach(() => {
   mock({
     "/test": {
       "note.md": "hello world!",
@@ -17,36 +19,26 @@ beforeEach(async () => {
   });
 });
 
-afterEach(async () => {
+afterEach(() => {
   restore();
 });
 
 test("exists", async () => {
-  return fileExists("/test/note.md").then((exists) => {
-    expect(exists).toBe(true);
-  });
+  assert.equal(await fileExists("/test/note.md"), true);
 });
 
 test("not exists", async () => {
-  return fileExists("/test/nope.md").then((exists) => {
-    expect(exists).toBe(false);
-  });
+  assert.equal(await fileExists("/test/nope.md"), false);
 });
 
 test("directory", async () => {
-  return fileExists("/test/dir").then((exists) => {
-    expect(exists).toBe(false);
-  });
+  assert.equal(await fileExists("/test/dir"), false);
 });
 
 test("directory included", async () => {
-  return fileExists("/test/dir", { includeDirectories: true }).then((exists) => {
-    expect(exists).toBe(true);
-  });
+  assert.equal(await fileExists("/test/dir", { includeDirectories: true }), true);
 });
 
 test("no access", async () => {
-  return fileExists("/no-access/error.md").then((exists) => {
-    expect(exists).toBe(undefined);
-  });
+  assert.equal(await fileExists("/no-access/error.md"), undefined);
 });
